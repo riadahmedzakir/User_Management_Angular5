@@ -1,0 +1,45 @@
+<ng-template #content class="modal fade">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Login Status</h4>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Login successful, as {{loggedUser}}</p>
+    </div>
+  </div>
+</ng-template>
+
+<div class="login-page">
+  <h2>{{title.toUpperCase()}}</h2>
+  <div class="form">
+    <form (ngSubmit)="onRegistrationSubmit()" class="register-form">
+      <input type="text" [(ngModel)]="userModel.firstName" name="firstName" #firstName="ngModel" placeholder="First Name" required/>
+      <p [hidden]="firstName.valid || firstName.pristine" class="err-msg">*First name is required</p>
+      <input type="text" [(ngModel)]="userModel.lastName" name="lastName" #lastName="ngModel" placeholder="Last Name" required
+      />
+      <p [hidden]="lastName.valid || lastName.pristine" class="err-msg">*Last name is required</p>
+      <input type="text" [(ngModel)]="userModel.newUserName" name="newUserName" #newUserName="ngModel" placeholder="User Name" required
+      />
+      <p [hidden]="newUserName.valid || newUserName.pristine" class="err-msg">*User name is required</p>
+      <input type="password" [(ngModel)]="userModel.newPassword" name="newPassword" #newPassword="ngModel" placeholder="Password"
+        required />
+      <p [hidden]="newPassword.valid || newPassword.pristine" class="err-msg">*Password is required</p>
+      <button type="submit">Create Account</button>
+      <p class="message">Already registered?
+        <a (click)="changeTitle()">Sign In</a>
+      </p>
+    </form>
+    <form (ngSubmit)="onLoginSubmit(content)" class="login-form">
+      <input type="text" [(ngModel)]="userModel.userName" name="userName" placeholder="User Name" />
+      <input type="password" [(ngModel)]="userModel.password" name="passWord" placeholder="Password" />
+      <p [hidden]="isValid" class="err-msg">*Username/Password did not match</p>
+      <button type="submit">Login</button>
+      <p class="message">Not registered?
+        <a (click)="changeTitle()">Create an account</a>
+      </p>
+    </form>
+  </div>
+</div>
