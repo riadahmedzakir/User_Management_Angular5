@@ -1,0 +1,25 @@
+{
+    "LOGIN": {
+        "LOGIN_PAGE": "Login page",
+        "USER_NAME": "User Name",
+        "PASSWORD": "Password",
+        "NOT_REGISTERED": "Not registered?",
+        "CREATE_ACCOUNT": "Create an account",
+        "LOGIN": "Login",
+        "FAILED_ERROR": "*Username/Password did not match"
+    },
+    "REGISTRATION": {
+        "REGISTRATION_PAGE": "Registration page",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "USER_NAME": "User Name",
+        "PASSWORD": "Password",
+        "CREATE_ACCOUNT": "Create account",
+        "FIRST_NAME_REQUIRED": "*First name is required",
+        "LAST_NAME_REQUIRED": "*Last name is required",
+        "USER_NAME_REQUIRED": "*User name is required",
+        "PASSWORD_REQUIRED": "Password is required",
+        "AlREADY_REGISTERED": "Already registered?",
+        "SIGN_IN": "Sign In"
+    }
+}

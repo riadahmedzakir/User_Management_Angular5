@@ -12,6 +12,7 @@ export class LoginService {
       this.userList = JSON.parse(localStorage.getItem('users'));
     }
   }
+  
   getUserList(userName: string, password: string): boolean {
     //console.log(userName, password);
     for (let i = 0; i < this.userList.length; i++) {

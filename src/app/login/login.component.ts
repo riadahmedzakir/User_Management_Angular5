@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './../login.service';
+import { LanguageService } from './../language.service';
 import { User } from './../user.model';
 import * as $ from 'jquery';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   titleStatus: boolean = true;
   isValid: boolean = true;
   loggedUser: string;
+  language: any;
   //activateModal: boolean = false;
   //userList: User[];
   userModel = {
@@ -26,14 +28,22 @@ export class LoginComponent implements OnInit {
     userType: ''
   }
 
-  constructor(private loginService: LoginService, private modalService: NgbModal) {
+  constructor(private loginService: LoginService, private modalService: NgbModal, private languageService: LanguageService) {
     //this.userList = loginService.getUserList();
   }
 
   ngOnInit() {
+    // debugger;
     $('.message a').click(function () {
       $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
     });
+
+    this.languageService.getCommonLanguage('en-US')
+      .subscribe((data) => {
+        this.language = data;
+        console.log(this.language);
+      }, err => console.log(err), () => console.log("Done loading language"));
+    console.log(this.language);
   }
 
   changeTitle() {

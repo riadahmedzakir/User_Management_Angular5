@@ -1,0 +1,25 @@
+{
+    "LOGIN": {
+        "LOGIN_PAGE": "Login page FR",
+        "USER_NAME": "User Name FR",
+        "PASSWORD": "Password FR",
+        "NOT_REGISTERED": "Not registered? FR",
+        "CREATE_ACCOUNT": "Create an account FR",
+        "LOGIN": "Login FR",
+        "FAILED_ERROR": "*Username/Password did not match FR"
+    },
+    "REGISTRATION": {
+        "REGISTRATION_PAGE": "Registration page FR",
+        "FIRST_NAME": "First Name FR",
+        "LAST_NAME": "Last Name FR",
+        "USER_NAME": "User Name FR",
+        "PASSWORD": "Password FR",
+        "CREATE_ACCOUNT": "Create account FR",
+        "FIRST_NAME_REQUIRED": "*First name is required FR",
+        "LAST_NAME_REQUIRED": "*Last name is required FR",
+        "USER_NAME_REQUIRED": "*User name is required FR",
+        "PASSWORD_REQUIRED": "Password is required FR",
+        "AlREADY_REGISTERED": "Already registered? FR",
+        "SIGN_IN": "Sign In FR"
+    }
+}
