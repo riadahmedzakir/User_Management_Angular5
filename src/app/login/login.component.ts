@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   titleStatus: boolean = true;
   isValid: boolean = true;
   loggedUser: string;
-  language: any;
+  localizationObj: any;
+  error: boolean = false;
   //activateModal: boolean = false;
   //userList: User[];
   userModel = {
@@ -32,18 +33,34 @@ export class LoginComponent implements OnInit {
     //this.userList = loginService.getUserList();
   }
 
+  getLocalizationData() {
+    var promise = new Promise((resolve, reject) => {
+      if (this.error) {
+        reject();
+      } else {
+        this.languageService.getCommonLanguage('en-US')
+          .subscribe((data) => {
+            this.localizationObj = data;
+            // console.log(this.language);
+          }, err => console.log(err), () => {
+            resolve();
+          });
+      }
+    });
+    return promise;
+  }
+
   ngOnInit() {
     // debugger;
     $('.message a').click(function () {
       $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
     });
-
-    this.languageService.getCommonLanguage('en-US')
-      .subscribe((data) => {
-        this.language = data;
-        console.log(this.language);
-      }, err => console.log(err), () => console.log("Done loading language"));
-    console.log(this.language);
+    this.getLocalizationData().then(
+      () => {
+        console.log(this.localizationObj);
+      }
+    );
+    // console.log(this.localizationObj);
   }
 
   changeTitle() {
